@@ -10,12 +10,14 @@ public class Session {
     private String sessionId;
     private UUID sessionUUID;
     private ChannelHandlerContext sessionContext;
+    private boolean isAuthorized;
 
-    public Session(String sessionName, String sessionId, UUID sessionUUID, ChannelHandlerContext sessionContext) {
+    public Session(String sessionName, String sessionId, UUID sessionUUID, ChannelHandlerContext sessionContext, boolean isAuthorized) {
         this.sessionName = sessionName;
         this.sessionId = sessionId;
         this.sessionUUID = sessionUUID;
         this.sessionContext = sessionContext;
+        this.isAuthorized = isAuthorized;
     }
 
     public String getSessionName() {
@@ -32,5 +34,13 @@ public class Session {
 
     public ChannelHandlerContext getSessionContext() {
         return sessionContext;
+    }
+
+    public void setAuthorized(boolean authorized) {
+        isAuthorized = authorized;
+    }
+
+    public boolean isAuthorized() {
+        return isAuthorized;
     }
 }

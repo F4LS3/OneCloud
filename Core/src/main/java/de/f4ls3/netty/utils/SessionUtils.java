@@ -47,8 +47,15 @@ public class SessionUtils {
         return null;
     }
 
-    public Session newSession(String sessionName, String sessionId, UUID sessionUUID, ChannelHandlerContext sessionContext) {
-        return new Session(sessionName, sessionId, sessionUUID, sessionContext);
+    public Session newSession(String sessionName, String sessionId, UUID sessionUUID, ChannelHandlerContext sessionContext, boolean isAuthorized) {
+        return new Session(sessionName, sessionId, sessionUUID, sessionContext, isAuthorized);
+    }
+
+    public void disconnectAllSessions() {
+        for (Session session : sessions) {
+            session.getSessionContext().channel().closeFuture();
+            sessions.remove(session);
+        }
     }
 
     public List<Session> getSessions() {

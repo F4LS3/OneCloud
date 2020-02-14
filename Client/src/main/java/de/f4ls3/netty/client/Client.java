@@ -28,9 +28,6 @@ public class Client extends Thread {
     private static final boolean EPOLL = Epoll.isAvailable();
 
     private int port;
-    private long startTime = -1;
-    private long reconnectAttempts = 0;
-    private int reconnectDelay = 10;
     private String host;
     private Bootstrap b;
 

@@ -82,6 +82,5 @@ public class CommandHandler extends Handler {
 
     public static void stop() {
         isRunning = false;
-        System.exit(0);
     }
 }

@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c8f9f8e-f365-46eb-8f67-fdfdddd2a611" name="Default Changelist" comment="" />
+    <list default="true" id="4c8f9f8e-f365-46eb-8f67-fdfdddd2a611" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/main/java/de/f4ls3/netty/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/main/java/de/f4ls3/netty/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/SessionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/SessionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/handler/CommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/handler/CommandHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Core.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/SessionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/SessionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/handler/CommandHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/handler/CommandHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/commands/StopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/handler/PacketChannelInboundHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/handler/PacketChannelInboundHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +28,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -23,6 +39,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1Xke2mtIP68iDZCtAAdybOa4vMY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -30,6 +47,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -80,10 +98,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="182" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1581681284031" />
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581596262631">
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581696377367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581596262631" />
+    <state x="414" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581696377367" />
     <state x="705" y="331" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581684459818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -112,22 +130,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="722" y="384" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1581687752669" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1581689157813">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1581698007690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581689157813" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1581689157813">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581698007690" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1581698007690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581689157813" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1581689157813">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581698007690" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1581698007690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581689157813" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1581689157813">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581698007690" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1581698007690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581689157813" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581698007690" />
     <state width="1877" height="282" key="GridCell.Tab.1.bottom" timestamp="1581684159068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -148,6 +166,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="216" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1581602866932" />
+    <state x="702" y="140" key="refactoring.ChangeSignatureDialog" timestamp="1581697042078">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="702" y="140" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581697042078" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581682533979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

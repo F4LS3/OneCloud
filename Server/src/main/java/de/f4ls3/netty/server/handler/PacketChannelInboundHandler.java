@@ -21,7 +21,7 @@ public class PacketChannelInboundHandler extends SimpleChannelInboundHandler<Pac
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        Session session = sessionUtils.newSession("test", ctx.channel().id().toString(), UUID.randomUUID(), ctx);
+        Session session = sessionUtils.newSession("test", ctx.channel().id().toString(), UUID.randomUUID(), ctx, false);
         sessionUtils.getSessions().add(session);
         this.prefix = "[" + session.getSessionContext().channel().remoteAddress().toString() + "/id=" + session.getSessionId() + "/uuid=" + session.getSessionUUID().toString() + "]";
 
@@ -49,13 +49,18 @@ public class PacketChannelInboundHandler extends SimpleChannelInboundHandler<Pac
                 return;
 
             } else {
+                session.setAuthorized(authHandler.validateAuthKey(authKey));
+                System.out.println(session.isAuthorized());
                 session.getSessionContext().channel().writeAndFlush(new ConfirmationPacket(ConfirmationType.AUTH));
                 Logger.log("Channel " + this.prefix + " authorized successful");
+                return;
             }
 
-        } else if(packet instanceof PingPacket) {
-            long ping = (System.currentTimeMillis() - ((PingPacket) packet).getPing());
-            Logger.log("Ping: " + ping + "ms");
+        } else if(session.isAuthorized()) {
+            if(packet instanceof PingPacket) {
+                long ping = (System.currentTimeMillis() - ((PingPacket) packet).getPing());
+                Logger.log("Ping: " + ping + "ms");
+            }
         }
     }
 
