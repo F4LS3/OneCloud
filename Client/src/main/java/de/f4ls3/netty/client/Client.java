@@ -2,8 +2,10 @@ package de.f4ls3.netty.client;
 
 import de.f4ls3.netty.client.handler.PacketDecoder;
 import de.f4ls3.netty.client.handler.PacketEncoder;
+import de.f4ls3.netty.impl.ConfirmationType;
 import de.f4ls3.netty.impl.Packet;
 import de.f4ls3.netty.packets.AuthPacket;
+import de.f4ls3.netty.packets.ConfirmationPacket;
 import de.f4ls3.netty.packets.PingPacket;
 import de.f4ls3.netty.utils.Logger;
 import io.netty.bootstrap.Bootstrap;
@@ -69,9 +71,6 @@ public class Client extends Thread {
                                     }
 
                                     Logger.log("Connected to Server");
-
-                                    this.channel.writeAndFlush(new AuthPacket("be502fea-a47f-4e3c-8350-5e5276f09f77f0ad1875-5e78-4365-9ce5-8e43ff379dfb"));
-                                    Logger.log("Sent authorization");
                                 }
 
                                 @Override
@@ -93,8 +92,19 @@ public class Client extends Thread {
 
                                 @Override
                                 protected void channelRead0(ChannelHandlerContext ctx, Packet packet) throws Exception {
-                                    if(packet instanceof PingPacket) {
+                                    if(packet instanceof AuthPacket) {
+                                        this.channel.writeAndFlush(new AuthPacket("be502fea-a47f-4e3c-8350-5e5276f09f77f0ad1875-5e78-4365-9ce5-8e43ff379dfb"));
+                                        Logger.log("Sent authorization");
+
+                                    } else if(packet instanceof PingPacket) {
                                         ctx.channel().writeAndFlush(new PingPacket(System.currentTimeMillis()));
+
+                                    } else if(packet instanceof ConfirmationPacket) {
+                                        ConfirmationPacket confirmationPacket = (ConfirmationPacket) packet;
+
+                                        if(confirmationPacket.getConfirmationType().equals(ConfirmationType.AUTH)) {
+                                            Logger.log("Authorized successfully");
+                                        }
                                     }
                                 }
 

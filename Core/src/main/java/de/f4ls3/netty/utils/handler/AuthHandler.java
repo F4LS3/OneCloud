@@ -2,7 +2,7 @@ package de.f4ls3.netty.utils.handler;
 
 import de.f4ls3.netty.impl.Handler;
 
-public class AuthHandler extends Handler {
+public class AuthHandler {
 
     private String authKey;
 
@@ -10,9 +10,8 @@ public class AuthHandler extends Handler {
         this.authKey = authKey;
     }
 
-    @Override
-    public void handle() {
-        
+    public boolean validateAuthKey(String key) {
+        return key.equals(authKey);
     }
 
     public String getAuthKey() {
