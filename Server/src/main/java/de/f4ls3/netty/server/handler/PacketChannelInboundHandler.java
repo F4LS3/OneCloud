@@ -2,10 +2,12 @@ package de.f4ls3.netty.server.handler;
 
 import de.f4ls3.netty.impl.ConfirmationType;
 import de.f4ls3.netty.impl.Packet;
+import de.f4ls3.netty.impl.RequestType;
 import de.f4ls3.netty.impl.Session;
 import de.f4ls3.netty.packets.AuthPacket;
 import de.f4ls3.netty.packets.ConfirmationPacket;
 import de.f4ls3.netty.packets.PingPacket;
+import de.f4ls3.netty.packets.RequestPacket;
 import de.f4ls3.netty.utils.Logger;
 import de.f4ls3.netty.utils.SessionUtils;
 import de.f4ls3.netty.utils.handler.AuthHandler;
@@ -26,7 +28,7 @@ public class PacketChannelInboundHandler extends SimpleChannelInboundHandler<Pac
         this.prefix = "[" + session.getSessionContext().channel().remoteAddress().toString() + "/id=" + session.getSessionId() + "/uuid=" + session.getSessionUUID().toString() + "]";
 
         Logger.log("Channel " + this.prefix + " connected");
-        session.getSessionContext().channel().writeAndFlush(new AuthPacket(), session.getSessionContext().channel().voidPromise());
+        session.getSessionContext().channel().writeAndFlush(new RequestPacket(RequestType.AUTH), session.getSessionContext().channel().voidPromise());
     }
 
     @Override

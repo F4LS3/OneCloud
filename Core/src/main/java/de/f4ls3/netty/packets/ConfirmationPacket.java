@@ -7,8 +7,6 @@ public class ConfirmationPacket implements Packet {
 
     private ConfirmationType confirmationType;
 
-    public ConfirmationPacket() {}
-
     public ConfirmationPacket(ConfirmationType confirmationType) {
         this.confirmationType = confirmationType;
     }
