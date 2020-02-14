@@ -1,5 +1,6 @@
 package de.f4ls3.netty.client;
 
+import de.f4ls3.netty.client.handler.PacketChannelInboundHandler;
 import de.f4ls3.netty.client.handler.PacketDecoder;
 import de.f4ls3.netty.client.handler.PacketEncoder;
 import de.f4ls3.netty.impl.ConfirmationType;
@@ -19,6 +20,7 @@ import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 
+import javax.net.ssl.SSLException;
 import java.util.concurrent.TimeUnit;
 
 public class Client extends Thread {
@@ -57,68 +59,7 @@ public class Client extends Thread {
                     pipeline.addLast(sslCtx.newHandler(ch.alloc(), host, port));
                     pipeline.addLast("decoder", new PacketDecoder());
                     pipeline.addLast("encoder", new PacketEncoder());
-                    pipeline.addLast(new SimpleChannelInboundHandler<Packet>() {
-                                private String prefix;
-                                private Channel channel;
-
-                                @Override
-                                public void channelActive(ChannelHandlerContext ctx) throws Exception {
-                                    this.channel = ctx.channel();
-                                    this.prefix = "[" + this.channel.remoteAddress().toString() + "/id=" + this.channel.id() + "] ";
-
-                                    if(startTime < 0) {
-                                        startTime = System.currentTimeMillis();
-                                    }
-
-                                    Logger.log("Connected to Server");
-                                }
-
-                                @Override
-                                public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-                                    Logger.log("Disconnected from Server");
-
-                                    Logger.warn("Trying to reconnect in " + reconnectDelay + "s...");
-                                }
-
-                                @Override
-                                public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
-                                    ctx.channel().eventLoop().schedule(() -> {
-                                        reconnectAttempts++;
-                                        Logger.log("Reconnecting... (attempt: " + reconnectAttempts + ")");
-                                        connect();
-
-                                    }, reconnectDelay, TimeUnit.SECONDS);
-                                }
-
-                                @Override
-                                protected void channelRead0(ChannelHandlerContext ctx, Packet packet) throws Exception {
-                                    if(packet instanceof AuthPacket) {
-                                        this.channel.writeAndFlush(new AuthPacket("be502fea-a47f-4e3c-8350-5e5276f09f77f0ad1875-5e78-4365-9ce5-8e43ff379dfb"));
-                                        Logger.log("Sent authorization");
-
-                                    } else if(packet instanceof PingPacket) {
-                                        ctx.channel().writeAndFlush(new PingPacket(System.currentTimeMillis()));
-
-                                    } else if(packet instanceof ConfirmationPacket) {
-                                        ConfirmationPacket confirmationPacket = (ConfirmationPacket) packet;
-
-                                        if(confirmationPacket.getConfirmationType().equals(ConfirmationType.AUTH)) {
-                                            Logger.log("Authorized successfully");
-                                        }
-                                    }
-                                }
-
-                                @Override
-                                public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-                                    if(cause.getMessage().equalsIgnoreCase("Eine vorhandene Verbindung wurde vom Remotehost geschlossen")) return;
-                                    cause.printStackTrace();
-                                }
-                            });
-                }
-
-                @Override
-                public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-                    cause.printStackTrace();
+                    pipeline.addLast(new PacketChannelInboundHandler());
                 }
             });
 
@@ -131,16 +72,5 @@ public class Client extends Thread {
         } finally {
             childGroup.shutdownGracefully();
         }
-    }
-
-    public void connect() {
-        if(this.b == null) return;
-
-        this.b.connect(this.host, this.port).addListener((ChannelFutureListener) channelFuture -> {
-            if(channelFuture.cause() != null) {
-                this.startTime = -1;
-                channelFuture.cause().printStackTrace();
-            }
-        });
     }
 }
