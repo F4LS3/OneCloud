@@ -4,6 +4,7 @@ import de.f4ls3.netty.impl.CommandExecutor;
 import de.f4ls3.netty.impl.CommandInfo;
 import de.f4ls3.netty.impl.Handler;
 import de.f4ls3.netty.utils.*;
+import io.netty.bootstrap.ServerBootstrap;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,6 +15,7 @@ import java.util.List;
 public class CommandHandler extends Handler {
 
     private HashMap<String, CommandExecutor> commandMap = new HashMap<>();
+    private static boolean isRunning = false;
 
     public String arrayBuilder(String[] array) {
         StringBuilder builder = new StringBuilder();
@@ -55,8 +57,9 @@ public class CommandHandler extends Handler {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String line;
+            this.isRunning = true;
             System.out.print("> ");
-            while((line = reader.readLine().toLowerCase()) != null) {
+            while((line = reader.readLine().toLowerCase()) != null && this.isRunning) {
                 if((line = line.replace("> ", "")).length() == 0) continue;
                 String[] args = line.split(" ");
 
@@ -75,5 +78,10 @@ public class CommandHandler extends Handler {
             Logger.err("There was an error during command handling! Cause: " + e.getCause() + ", Message: " + e.getMessage());
             handle();
         }
+    }
+
+    public static void stop() {
+        isRunning = false;
+        System.exit(0);
     }
 }
