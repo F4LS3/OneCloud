@@ -15,7 +15,6 @@ public class ServerGroup extends Group {
     public void startServer(int amount) {
         // TODO: Server start
         ProcessBuilder builder = new ProcessBuilder();
-
-        builder.directory(new File("./test"));
+        builder.directory(new File("./"));
     }
 }

@@ -1,1 +1,7 @@
- Core/.idea/workspace.xml
+Core/.idea/workspace.xml
+Server/target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar
+Server/target/Server-1.0-SNAPSHOT.jar
+Client/target/Client-1.0-SNAPSHOT-jar-with-dependencies.jar
+Client/target/Client-1.0-SNAPSHOT.jar
+Core/target/Core-1.0-SNAPSHOT-jar-with-dependencies.jar
+Core/target/Core-1.0-SNAPSHOT.jar

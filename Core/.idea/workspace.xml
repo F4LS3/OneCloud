@@ -2,8 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c8f9f8e-f365-46eb-8f67-fdfdddd2a611" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/Group.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/GroupType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/RequestType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/ServerGroup.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/packets/RequestPacket.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/handler/GroupHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/ServerGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/ServerGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/handler/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/handler/FileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Netty-Core-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Netty-Core-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Netty-Core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Netty-Core.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/packets/ConfirmationPacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/packets/ConfirmationPacket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/SessionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/SessionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/ServerLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/ServerLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/commands/StopCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Server/target/classes/de/f4ls3/netty/server/handler/PacketChannelInboundHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/de/f4ls3/netty/server/handler/PacketChannelInboundHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +56,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -120,22 +142,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="722" y="384" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1581687752669" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1581724820261">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1581786124448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581724820261" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1581724820261">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581786124448" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1581786124448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581724820261" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1581724820261">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581786124448" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1581786124447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581724820261" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1581724820261">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581786124447" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1581786124448">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581724820261" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581786124448" />
     <state width="1877" height="282" key="GridCell.Tab.1.bottom" timestamp="1581684159068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -152,6 +174,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581684159068" />
+    <state x="461" y="163" key="SettingsEditor" timestamp="1581783001656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581783001656" />
     <state x="342" y="216" key="new project wizard" timestamp="1581602866932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

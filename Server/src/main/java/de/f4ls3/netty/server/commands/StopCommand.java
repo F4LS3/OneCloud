@@ -2,11 +2,17 @@ package de.f4ls3.netty.server.commands;
 
 import de.f4ls3.netty.impl.CommandExecutor;
 import de.f4ls3.netty.impl.CommandInfo;
+import de.f4ls3.netty.impl.Log;
 import de.f4ls3.netty.server.Server;
 import de.f4ls3.netty.server.handler.PacketChannelInboundHandler;
 import de.f4ls3.netty.utils.Logger;
 import de.f4ls3.netty.utils.SessionUtils;
 import de.f4ls3.netty.utils.handler.CommandHandler;
+import de.f4ls3.netty.utils.handler.FileHandler;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @CommandInfo(name = "stop", aliases = {"die", "kill", "end"}, syntax = "stop", description = "Stoppt das gesamte System")
 public class StopCommand extends CommandExecutor {
@@ -18,7 +24,8 @@ public class StopCommand extends CommandExecutor {
             Logger.warn("Syntax: " + getSyntax());
             return;
         }
-
+        Logger.getLog().flush();
+        FileHandler.saveLatestLog();
         PacketChannelInboundHandler.getSessionUtils().disconnectAllSessions();
         CommandHandler.stop();
 
