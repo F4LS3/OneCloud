@@ -1,5 +1,6 @@
 package de.f4ls3.netty.impl;
 
+import java.io.File;
 import java.util.UUID;
 
 public class ServerGroup extends Group {
@@ -13,6 +14,8 @@ public class ServerGroup extends Group {
 
     public void startServer(int amount) {
         // TODO: Server start
+        ProcessBuilder builder = new ProcessBuilder();
 
+        builder.directory(new File("./test"));
     }
 }
