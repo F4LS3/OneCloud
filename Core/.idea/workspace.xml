@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c8f9f8e-f365-46eb-8f67-fdfdddd2a611" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/Group.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/GroupType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/RequestType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/impl/ServerGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/packets/RequestPacket.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/handler/GroupHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/target/Client-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/ServerGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/impl/ServerGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/handler/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/f4ls3/netty/utils/handler/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Netty-Core-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Netty-Core-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Netty-Core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Netty-Core.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/packets/ConfirmationPacket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/packets/ConfirmationPacket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/SessionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/f4ls3/netty/utils/SessionUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/ServerLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/ServerLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/commands/StopCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/src/main/java/de/f4ls3/netty/server/commands/StopCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/Server-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Server/target/classes/de/f4ls3/netty/server/handler/PacketChannelInboundHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/target/classes/de/f4ls3/netty/server/handler/PacketChannelInboundHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
