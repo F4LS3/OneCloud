@@ -11,14 +11,14 @@ public class FileParser {
 
     private Gson gson = new Gson();
 
-    public HashMap<String, Object> parseFile(File file) {
+    public String parseFile(File file) {
         try {
             if (file.getName().endsWith(".json")) {
                 StringBuilder builder = new StringBuilder();
-                Scanner scanner = new Scanner(new FileInputStream(file));
+                Scanner scanner = new Scanner(file);
 
                 while(scanner.hasNext()) builder.append(scanner.nextLine());
-                return gson.fromJson(builder.toString(), HashMap.class);
+                return builder.toString();
             }
 
         } catch (Exception e) {

@@ -25,9 +25,11 @@ public class Document {
     }
 
     public Document appendAll(HashMap<String, Object> map) {
-        map.forEach((key, value) -> {
-            map.put(key, value);
-        });
+        if(!map.isEmpty()) {
+            map.forEach((key, value) -> {
+                storage.put(key, value);
+            });
+        }
         return this;
     }
 

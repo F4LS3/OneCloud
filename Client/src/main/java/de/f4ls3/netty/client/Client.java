@@ -9,6 +9,8 @@ import de.f4ls3.netty.packets.AuthPacket;
 import de.f4ls3.netty.packets.ConfirmationPacket;
 import de.f4ls3.netty.packets.PingPacket;
 import de.f4ls3.netty.utils.Logger;
+import de.f4ls3.netty.utils.handler.CommandHandler;
+import de.f4ls3.netty.utils.handler.FileHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.epoll.Epoll;
@@ -61,6 +63,10 @@ public class Client extends Thread {
             });
 
             ChannelFuture f = this.b.connect(this.host, this.port);
+
+            FileHandler fileHandler = new FileHandler();
+            fileHandler.handle();
+
             f.sync().channel().closeFuture().syncUninterruptibly();
 
         } catch (Exception e) {

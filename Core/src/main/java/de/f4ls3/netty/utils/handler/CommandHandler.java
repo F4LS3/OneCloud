@@ -58,21 +58,19 @@ public class CommandHandler extends Handler {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String line;
             this.isRunning = true;
-            while(this.isRunning) {
-                System.out.print("> ");
-                line = reader.readLine().toLowerCase().replace("> ", "");
+            System.out.print("$ ");
+            while((line = reader.readLine().toLowerCase()) != null && this.isRunning) {
                 if(line.length() == 0) continue;
-
-                String[] args = line.split(" ");
+                String[] args = line.replace("$ ", "").split(" ");
 
                 if(commandMap.containsKey(args[0])) {
-
                     CommandExecutor commandExecutor = commandMap.get(args[0]);
                     commandExecutor.execute(args);
 
                 } else {
                     Logger.warn("Command \"" + args[0].toUpperCase() + "\" not found!");
                 }
+                System.out.print("$ ");
             }
 
         } catch (Exception e) {

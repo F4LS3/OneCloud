@@ -1,5 +1,6 @@
 package de.f4ls3.netty.utils.handler;
 
+import de.f4ls3.netty.Core;
 import de.f4ls3.netty.impl.Handler;
 import de.f4ls3.netty.impl.Log;
 import de.f4ls3.netty.utils.Document;
@@ -8,10 +9,7 @@ import de.f4ls3.netty.utils.FileParser;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class FileHandler extends Handler {
 
@@ -26,36 +24,25 @@ public class FileHandler extends Handler {
         try {
             FileParser parser = new FileParser();
 
-            new File("./config.json").createNewFile();
-            new File("./auth_key.token").createNewFile();
-
             files.add(0, new File("./config.json"));
-            files.add(1, new File("./auth_key.token"));
+            files.add(1, new File("./auth_key.json"));
+            files.add(2, new File("./logs/"));
 
-            documents.add(0, new Document());
-            documents.add(1, new Document());
+            for (File file : files) {
+                file.mkdirs();
+                file.createNewFile();
+            }
+
+            documents.add(0, new Document(Core.getGson().fromJson(parser.parseFile(files.get(0)), HashMap.class)));
+            documents.add(1, new Document(Core.getGson().fromJson(parser.parseFile(files.get(1)), HashMap.class)));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void saveLatestLog() {
-        try {
-            List<Object> latest = new ArrayList<>();
-            File file = new File("./logs/latest.log");
-            if(!new File("./logs/latest.log").exists()) {
-                new File("./logs/").mkdirs();
-                file.createNewFile();
-            }
-            Scanner scanner = new Scanner(new File("./logs/latest.log"));
-            while (scanner.hasNext()) {
-                latest.add(scanner.nextLine());
-            }
-            log.appendAll(latest).flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static Log getLog() {
+        return log;
     }
 
     public Document getConfig() {
