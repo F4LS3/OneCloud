@@ -1,8 +1,13 @@
 package de.f4ls3.netty.impl;
 
+import de.f4ls3.netty.impl.enums.GroupType;
+import de.f4ls3.netty.utils.Logger;
+
 import java.io.*;
+import java.nio.Buffer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class ServerGroup extends Group {
 
@@ -21,7 +26,16 @@ public class ServerGroup extends Group {
                 ProcessBuilder builder = new ProcessBuilder("java", "-jar", "spigot.jar")
                         .directory(new File("./templates/" + getGroupName() + "/"));
                 builder.redirectOutput(ProcessBuilder.Redirect.INHERIT);
-                serverProcesses.put(getGroupName() + (serverProcesses.size() + 1), builder.start());
+                int serverId = (serverProcesses.size() + 1);
+                Process p = builder.start();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                List<String> serverOutput = new ArrayList<>();
+                serverProcesses.put(getGroupName() + "-" + serverId, p);
+                Logger.log("Started [" + getGroupName() + "-" + serverId + "/uuid=" + getGroupUUID() + "] server");
+                while(reader.readLine() != null) serverOutput.add(reader.readLine());
+
+                System.out.println(serverOutput);
+                this.onlineServers++;
             }
 
         } catch (IOException e) {

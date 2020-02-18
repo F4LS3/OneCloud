@@ -1,7 +1,7 @@
 package de.f4ls3.netty.packets;
 
-import de.f4ls3.netty.impl.Packet;
-import de.f4ls3.netty.impl.RequestType;
+import de.f4ls3.netty.interfaces.Packet;
+import de.f4ls3.netty.impl.enums.RequestType;
 
 public class RequestPacket implements Packet {
 

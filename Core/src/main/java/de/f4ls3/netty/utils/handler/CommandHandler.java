@@ -1,10 +1,9 @@
 package de.f4ls3.netty.utils.handler;
 
-import de.f4ls3.netty.impl.CommandExecutor;
-import de.f4ls3.netty.impl.CommandInfo;
-import de.f4ls3.netty.impl.Handler;
+import de.f4ls3.netty.impl.abstracts.CommandExecutor;
+import de.f4ls3.netty.interfaces.CommandInfo;
+import de.f4ls3.netty.impl.abstracts.Handler;
 import de.f4ls3.netty.utils.*;
-import io.netty.bootstrap.ServerBootstrap;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -74,7 +73,7 @@ public class CommandHandler extends Handler {
             }
 
         } catch (Exception e) {
-            Logger.err("There was an error during command handling! Cause: " + e.getCause() + ", Message: " + e.getMessage());
+            Logger.log("Please repeat the command you just entered");
             handle();
         }
     }

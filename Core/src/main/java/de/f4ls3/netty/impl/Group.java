@@ -1,5 +1,7 @@
 package de.f4ls3.netty.impl;
 
+import de.f4ls3.netty.impl.enums.GroupType;
+
 import java.util.UUID;
 
 public class Group {

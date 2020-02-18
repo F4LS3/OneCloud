@@ -1,6 +1,6 @@
 package de.f4ls3.netty.utils;
 
-import de.f4ls3.netty.impl.Packet;
+import de.f4ls3.netty.interfaces.Packet;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 

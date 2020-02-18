@@ -1,4 +1,4 @@
-package de.f4ls3.netty.impl;
+package de.f4ls3.netty.interfaces;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
 package de.f4ls3.netty.utils.handler;
 
 import de.f4ls3.netty.impl.Group;
-import de.f4ls3.netty.impl.Handler;
+import de.f4ls3.netty.impl.abstracts.Handler;
 
 public class GroupHandler extends Handler {
 

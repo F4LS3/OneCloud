@@ -1,4 +1,6 @@
-package de.f4ls3.netty.impl;
+package de.f4ls3.netty.impl.abstracts;
+
+import de.f4ls3.netty.interfaces.CommandInfo;
 
 public abstract class CommandExecutor {
 

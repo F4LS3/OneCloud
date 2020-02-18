@@ -1,6 +1,6 @@
 package de.f4ls3.netty.packets;
 
-import de.f4ls3.netty.impl.Packet;
+import de.f4ls3.netty.interfaces.Packet;
 
 public class PingPacket implements Packet {
 

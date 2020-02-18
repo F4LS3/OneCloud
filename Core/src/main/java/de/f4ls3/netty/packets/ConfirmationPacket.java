@@ -1,7 +1,7 @@
 package de.f4ls3.netty.packets;
 
-import de.f4ls3.netty.impl.ConfirmationType;
-import de.f4ls3.netty.impl.Packet;
+import de.f4ls3.netty.impl.enums.ConfirmationType;
+import de.f4ls3.netty.interfaces.Packet;
 
 public class ConfirmationPacket implements Packet {
 

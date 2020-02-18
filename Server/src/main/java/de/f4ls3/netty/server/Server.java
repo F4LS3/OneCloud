@@ -1,5 +1,7 @@
 package de.f4ls3.netty.server;
 
+import de.f4ls3.netty.impl.ServerGroup;
+import de.f4ls3.netty.impl.enums.GroupType;
 import de.f4ls3.netty.server.commands.HelpCommand;
 import de.f4ls3.netty.server.commands.PingCommand;
 import de.f4ls3.netty.server.commands.StopCommand;
@@ -18,6 +20,8 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
+
+import java.util.UUID;
 
 public class Server extends Thread {
 
@@ -45,10 +49,10 @@ public class Server extends Thread {
 
             sb.group(parentGroup, childGroup);
             sb.channel(EPOLL ? EpollServerSocketChannel.class : NioServerSocketChannel.class);
-            sb.childHandler(new ChannelInitializer<Channel>() {
+            sb.childHandler(new ChannelInitializer<>() {
                 @Override
                 protected void initChannel(Channel ch) throws Exception {
-                    ChannelPipeline pipeline =  ch.pipeline();
+                    ChannelPipeline pipeline = ch.pipeline();
 
                     pipeline
                             .addLast(sslCtx.newHandler(ch.alloc()))

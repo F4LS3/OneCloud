@@ -1,7 +1,6 @@
 package de.f4ls3.netty.client.handler;
 
-import de.f4ls3.netty.impl.Packet;
-import de.f4ls3.netty.utils.Logger;
+import de.f4ls3.netty.interfaces.Packet;
 import de.f4ls3.netty.utils.PacketUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

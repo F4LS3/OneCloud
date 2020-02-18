@@ -1,15 +1,13 @@
 package de.f4ls3.netty.server.handler;
 
-import de.f4ls3.netty.Core;
-import de.f4ls3.netty.impl.ConfirmationType;
-import de.f4ls3.netty.impl.Packet;
-import de.f4ls3.netty.impl.RequestType;
+import de.f4ls3.netty.impl.enums.ConfirmationType;
+import de.f4ls3.netty.interfaces.Packet;
+import de.f4ls3.netty.impl.enums.RequestType;
 import de.f4ls3.netty.impl.Session;
 import de.f4ls3.netty.packets.AuthPacket;
 import de.f4ls3.netty.packets.ConfirmationPacket;
 import de.f4ls3.netty.packets.PingPacket;
 import de.f4ls3.netty.packets.RequestPacket;
-import de.f4ls3.netty.server.KeyManager;
 import de.f4ls3.netty.server.Server;
 import de.f4ls3.netty.utils.Logger;
 import de.f4ls3.netty.utils.SessionUtils;

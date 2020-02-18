@@ -1,8 +1,8 @@
 package de.f4ls3.netty.server.commands;
 
 import de.f4ls3.netty.packets.PingPacket;
-import de.f4ls3.netty.impl.CommandExecutor;
-import de.f4ls3.netty.impl.CommandInfo;
+import de.f4ls3.netty.impl.abstracts.CommandExecutor;
+import de.f4ls3.netty.interfaces.CommandInfo;
 import de.f4ls3.netty.server.handler.PacketChannelInboundHandler;
 import de.f4ls3.netty.utils.Logger;
 

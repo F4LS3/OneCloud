@@ -1,8 +1,8 @@
 package de.f4ls3.netty.client.handler;
 
-import de.f4ls3.netty.impl.ConfirmationType;
-import de.f4ls3.netty.impl.Packet;
-import de.f4ls3.netty.impl.RequestType;
+import de.f4ls3.netty.impl.enums.ConfirmationType;
+import de.f4ls3.netty.interfaces.Packet;
+import de.f4ls3.netty.impl.enums.RequestType;
 import de.f4ls3.netty.packets.AuthPacket;
 import de.f4ls3.netty.packets.ConfirmationPacket;
 import de.f4ls3.netty.packets.PingPacket;
@@ -37,6 +37,7 @@ public class PacketChannelInboundHandler extends SimpleChannelInboundHandler<Pac
             if(requestPacket.getRequestType().equals(RequestType.AUTH)) {
                 this.channel.writeAndFlush(new AuthPacket("be502fea-a47f-4e3c-8350-5e5276f09f77f0ad1875-5e78-4365-9ce5-8e43ff379dfb"));
                 Logger.log("Sent authorization");
+
             }
 
         } else if (packet instanceof PingPacket) {

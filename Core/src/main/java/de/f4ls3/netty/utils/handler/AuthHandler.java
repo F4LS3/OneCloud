@@ -1,7 +1,5 @@
 package de.f4ls3.netty.utils.handler;
 
-import de.f4ls3.netty.impl.Handler;
-
 public class AuthHandler {
 
     private String authKey;

@@ -3,13 +3,6 @@ package de.f4ls3.netty.client;
 import de.f4ls3.netty.client.handler.PacketChannelInboundHandler;
 import de.f4ls3.netty.client.handler.PacketDecoder;
 import de.f4ls3.netty.client.handler.PacketEncoder;
-import de.f4ls3.netty.impl.ConfirmationType;
-import de.f4ls3.netty.impl.Packet;
-import de.f4ls3.netty.packets.AuthPacket;
-import de.f4ls3.netty.packets.ConfirmationPacket;
-import de.f4ls3.netty.packets.PingPacket;
-import de.f4ls3.netty.utils.Logger;
-import de.f4ls3.netty.utils.handler.CommandHandler;
 import de.f4ls3.netty.utils.handler.FileHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -21,9 +14,6 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
-
-import javax.net.ssl.SSLException;
-import java.util.concurrent.TimeUnit;
 
 public class Client extends Thread {
 
