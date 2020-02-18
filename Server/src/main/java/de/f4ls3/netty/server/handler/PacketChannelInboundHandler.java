@@ -1,5 +1,6 @@
 package de.f4ls3.netty.server.handler;
 
+import de.f4ls3.netty.Core;
 import de.f4ls3.netty.impl.ConfirmationType;
 import de.f4ls3.netty.impl.Packet;
 import de.f4ls3.netty.impl.RequestType;
@@ -8,6 +9,8 @@ import de.f4ls3.netty.packets.AuthPacket;
 import de.f4ls3.netty.packets.ConfirmationPacket;
 import de.f4ls3.netty.packets.PingPacket;
 import de.f4ls3.netty.packets.RequestPacket;
+import de.f4ls3.netty.server.KeyManager;
+import de.f4ls3.netty.server.Server;
 import de.f4ls3.netty.utils.Logger;
 import de.f4ls3.netty.utils.SessionUtils;
 import de.f4ls3.netty.utils.handler.AuthHandler;
@@ -42,8 +45,7 @@ public class PacketChannelInboundHandler extends SimpleChannelInboundHandler<Pac
         Session session = sessionUtils.getSessionById(ctx.channel().id().toString());
 
         if(packet instanceof AuthPacket) {
-            AuthHandler authHandler = new AuthHandler("be502fea-a47f-4e3c-8350-5e5276f09f77f0ad1875-5e78-4365-9ce5-8e43ff379dfb");
-            // AuthKey=be502fea-a47f-4e3c-8350-5e5276f09f77f0ad1875-5e78-4365-9ce5-8e43ff379dfb
+            AuthHandler authHandler = new AuthHandler(Server.getKeyManager().getAuthKey());
             String authKey = ((AuthPacket) packet).getAuthKey();
             if(!authHandler.validateAuthKey(authKey)) {
                 session.getSessionContext().channel().close();
@@ -52,7 +54,6 @@ public class PacketChannelInboundHandler extends SimpleChannelInboundHandler<Pac
 
             } else {
                 session.setAuthorized(authHandler.validateAuthKey(authKey));
-                System.out.println(session.isAuthorized());
                 session.getSessionContext().channel().writeAndFlush(new ConfirmationPacket(ConfirmationType.AUTH));
                 Logger.log("Channel " + this.prefix + " authorized successful");
                 return;

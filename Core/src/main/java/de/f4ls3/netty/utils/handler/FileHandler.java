@@ -29,12 +29,16 @@ public class FileHandler extends Handler {
             files.add(2, new File("./logs/"));
 
             for (File file : files) {
-                file.mkdirs();
-                file.createNewFile();
+                if(file.isDirectory() || !file.getName().endsWith(".json")) {
+                    file.mkdirs();
+
+                } else {
+                    file.createNewFile();
+                }
             }
 
             documents.add(0, new Document(Core.getGson().fromJson(parser.parseFile(files.get(0)), HashMap.class)));
-            documents.add(1, new Document(Core.getGson().fromJson(parser.parseFile(files.get(1)), HashMap.class)));
+            documents.add(1, new Document());
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -14,10 +14,10 @@ import java.util.List;
 
 public class CommandHandler extends Handler {
 
-    private HashMap<String, CommandExecutor> commandMap = new HashMap<>();
+    private static HashMap<String, CommandExecutor> commandMap = new HashMap<>();
     private static boolean isRunning = false;
 
-    public String arrayBuilder(String[] array) {
+    public static String arrayBuilder(String[] array) {
         StringBuilder builder = new StringBuilder();
 
         builder.append("[");
@@ -81,5 +81,9 @@ public class CommandHandler extends Handler {
 
     public static void stop() {
         isRunning = false;
+    }
+
+    public static HashMap<String, CommandExecutor> getCommandMap() {
+        return commandMap;
     }
 }

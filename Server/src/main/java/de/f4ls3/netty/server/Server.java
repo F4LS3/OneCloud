@@ -1,5 +1,6 @@
 package de.f4ls3.netty.server;
 
+import de.f4ls3.netty.server.commands.HelpCommand;
 import de.f4ls3.netty.server.commands.PingCommand;
 import de.f4ls3.netty.server.commands.StopCommand;
 import de.f4ls3.netty.server.handler.PacketChannelInboundHandler;
@@ -23,6 +24,9 @@ public class Server extends Thread {
     private static final boolean EPOLL = Epoll.isAvailable();
 
     private int port;
+
+    private static FileHandler fileHandler;
+    private static KeyManager keyManager;
 
     public Server(int port) {
         this.port = port;
@@ -63,12 +67,15 @@ public class Server extends Thread {
 
             ChannelFuture f = sb.bind(this.port).sync();
 
-            FileHandler fileHandler = new FileHandler();
+            fileHandler = new FileHandler();
             fileHandler.handle();
+            keyManager = new KeyManager();
+            keyManager.flush("be502fea-a47f-4e3c-8350-5e5276f09f77f0ad1875-5e78-4365-9ce5-8e43ff379dfb");
 
             CommandHandler commandHandler = new CommandHandler();
             commandHandler.registerCommand(new PingCommand());
             commandHandler.registerCommand(new StopCommand());
+            commandHandler.registerCommand(new HelpCommand());
             commandHandler.handle();
 
         } catch (Exception e) {
@@ -78,5 +85,13 @@ public class Server extends Thread {
             parentGroup.shutdownGracefully();
             childGroup.shutdownGracefully();
         }
+    }
+
+    public static FileHandler getFileHandler() {
+        return fileHandler;
+    }
+
+    public static KeyManager getKeyManager() {
+        return keyManager;
     }
 }

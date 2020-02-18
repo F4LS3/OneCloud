@@ -2,13 +2,11 @@ package de.f4ls3.netty.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import de.f4ls3.netty.Core;
 import org.json.simple.JSONObject;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.HashMap;
 
 public class Document {
@@ -67,11 +65,20 @@ public class Document {
         return (float) this.storage.get(key);
     }
 
+    public void reload(File file) {
+        try {
+            clear();
+            appendAll(Core.getGson().fromJson(Core.getFileParser().parseFile(file), HashMap.class));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void flush(File file) {
         try {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
             FileWriter writer = new FileWriter(file);
-            writer.write(gson.toJson(getStorage()));
+            writer.write(Core.getGson().toJson(getStorage()));
             writer.flush();
             writer.close();
 
